@@ -6,7 +6,7 @@ services:
     container_name: elasticsearch
     environment:
       - cluster.name=my_cluster
-      - node.name=node1
+      - node.name=node2
       - network.host=0.0.0.0
       - discovery.zen.ping.unicast.hosts=10.48.168.45,10.48.168.46
       - discovery.zen.minimum_master_nodes=1
