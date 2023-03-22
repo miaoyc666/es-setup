@@ -10,4 +10,5 @@ es集群设置
 ##### 1. exited with code 78
 `sudo sysctl -w vm.max_map_count=262144`
 
-##### 2. pass
+##### 2. create user
+`/usr/share/elasticsearch/bin/x-pack/users useradd miaoyc-user -p miaoyc-pwd -r superuser`
