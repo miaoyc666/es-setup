@@ -8,6 +8,7 @@ services:
       - cluster.name=my_cluster
       - node.name=node2
       - network.host=0.0.0.0
+      - transport.host=10.48.168.46
       - discovery.zen.ping.unicast.hosts=10.48.168.45,10.48.168.46
       - discovery.zen.minimum_master_nodes=1
       - xpack.security.enabled=false
