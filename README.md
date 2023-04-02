@@ -7,6 +7,9 @@ es集群设置
 - [两服务器单节点集群5.6.16](./test/2-server-5.6.16)
 - [两服务器单节点集群7.15.1](./test/2-server-7.15.1)
 
+#### 更新授权
+
+
 #### QA
 ##### 1. exited with code 78
 `sudo sysctl -w vm.max_map_count=262144`
