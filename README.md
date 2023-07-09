@@ -16,3 +16,10 @@ es集群设置
 
 ##### 2. create user
 `/usr/share/elasticsearch/bin/x-pack/users useradd miaoyc-user -p miaoyc-pwd -r superuser`
+
+##### 3. 创建索引设置number_of_replicas
+```bash 
+curl --location --request PUT 'http://127.0.0.1:9200/test' \
+--header 'Content-Type: application/json' \
+--data '{"settings":{"number_of_shards":"5","number_of_replicas":"2"}}'
+```
