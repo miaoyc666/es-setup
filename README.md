@@ -22,4 +22,10 @@ es集群设置
 curl --location --request PUT 'http://127.0.0.1:9200/test' \
 --header 'Content-Type: application/json' \
 --data '{"settings":{"number_of_shards":"5","number_of_replicas":"2"}}'
+
+curl --location --request PUT 'http://127.0.0.1:9200/test/_settings' \
+--header 'Content-Type: application/json' \
+--data '{
+    "number_of_replicas": 2
+}'
 ```
