@@ -1,19 +1,13 @@
 # es-setup
 es集群设置
 
-#### 单机
-pass
-
-#### 集群
-pass
-
 #### 测试
 - [单服务器三节点集群](./test/3-nodes-cluster/docker-compose-7.4.2.yml)
 - [两服务器单节点集群5.6.16](./test/2-server-5.6.16)
 - [两服务器单节点集群7.15.1](./test/2-server-7.15.1)
 
 #### 更新授权
-pass
+
 
 #### QA
 ##### 1. exited with code 78

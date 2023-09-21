@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.6.16
+    container_name: elasticsearch
+    restart: always
+    network_mode: "host"
+    environment:
+      - cluster.name=es_cluster
+      - node.name=127.0.0.1
+      - network.host=0.0.0.0
+      - discovery.zen.ping.unicast.hosts=127.0.0.1
+      - discovery.zen.minimum_master_nodes=1
+      - node.master=true
+      - node.data=true
+      - xpack.security.enabled=true
+      - xpack.security.http.ssl.enabled=false
+      - xpack.security.transport.ssl.enabled=false
+      - ELASTIC_USERNAME=miaoyc-user
+      - ELASTIC_PASSWORD=miaoyc-password
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+      - ./es_config/users:/usr/share/elasticsearch/config/x-pack/users
+      - ./es_config/users_roles:/usr/share/elasticsearch/config/x-pack/users_roles
+    expose:
+      - "9200"
+      - "9300"
+
+volumes:
+  elasticsearch_data:
+    name: elasticsearch_data
+    driver: local
+    driver_opts:
+      type: none
+      device: /data/elasticsearch_data
+      o: bind
